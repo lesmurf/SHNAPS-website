@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <link rel="stylesheet" href="style.css">
+    <title>SHNAPS SHOP</title>
+</head>
+<body>
+    <div class="announcement-bar">
+        FREE shipping on orders of 9 pieces or more!
+    </div>
+    
+    <header class="container navbar">
+        <div class="navbar-inner">
+            <nav class="nav-left">
+                <a href="shop.html">SHOP</a>
+                <a href="#">ABOUT US</a>
+                <a href="walloflove.html">WALL OF LOVE</a>
+            </nav>
+    
+            <div class="logo">
+                <a href="index.html">
+                    <img src="assets/logos/SHNAPS BLUE LOGO.png" alt="SHNAPS Logo">
+                </a>
+            </div>
+    
+            <nav class="nav-right">
+                <a href="#">FAQs</a>
+            </nav>
+        </div>
+    </header>
+
+    <section class="shop-hero">
+        <div class="product-section">
+            <div class="product-content">
+                <div class="product-images">
+                    <!-- Magnet Grid -->
+                    <img src="assets/shopPage/photo-printed1.jpg" alt="Photo Magnet Grid">
+                </div>
+                <div class="product-description">
+                    <h3>Custom Photo Magnets</h3>
+                    <p>Choose between a set of 9-piece or 18-piece SHNAPS magnets — perfect for gifts, keepsakes, or adding
+                        character to your fridge or wall. Printed with a matte finish and delivered in a gift-ready box.</p>
+                    <button onclick="openModal()" class="shop-btn">CREATE YOURS</button>
+                </div>
+            </div>
+        </div>
+    
+        <div class="product-section alt">
+            <div class="product-content">
+                <div class="product-description">
+                    <h3>The Archive</h3>
+                    <p>A complete set of 108 magnets — one for every special moment of the year. Comes with a custom
+                        engraved magnetic board. Beautiful, consistent, ready to be displayed instantly.</p>
+                    <button onclick="openModal()" class="shop-btn">CREATE YOURS</button>
+                </div>
+                <div class="product-images">
+                    <img src="assets/shopPage/the-archive.png" alt="The Archive Display">
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="how-it-works" id="how-it-works">
+        <h2>How it works</h2>
+        <div class="steps">
+            <div class="step">
+                <i class="fas fa-upload"></i>
+                <h4>1. Create Your Order</h4>
+                <p>Click "Create Yours" to fill in the form, upload your images, and submit your order.</p>
+            </div>
+            <div class="step">
+                <i class="fas fa-credit-card"></i>
+                <h4>2. Confirm & Pay</h4>
+                <p>We’ll confirm your order via email or text and send you a secure payment link.</p>
+            </div>
+            <div class="step">
+                <i class="fas fa-truck"></i>
+                <h4>3. We Craft & Ship</h4>
+                <p>Once payment is received, we’ll craft your magnets and ship them right to your door.</p>
+            </div>
+        </div>
+    </section>
+
+    <footer class="site-footer">
+        <div class="footer-container">
+            <!-- Left column -->
+            <div class="footer-left">
+                <img src="assets/logos/SHNAPS PINK LOGO.png" alt="SHNAPS Logo" class="footer-logo" />
+                <div class="footer-socials">
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-tiktok"></i></a>
+                    <a href="#"><i class="fas fa-shopping-cart"></i></a>
+                </div>
+                <p class="footer-tagline">90% of your best memories are still stuck in your camera roll.</p>
+            </div>
+    
+            <!-- Middle column -->
+            <div class="footer-links">
+                <div>
+                    <h4>SHOP</h4>
+                    <a href="#">The Collection</a>
+                    <a href="#">The Gallery</a>
+                    <a href="#">The Keepsake</a>
+                </div>
+                <div>
+                    <h4>INFO</h4>
+                    <a href="#">How it works</a>
+                    <a href="#">About Us</a>
+                    <a href="#">FAQs</a>
+                </div>
+                <div>
+                    <h4>CONNECT</h4>
+                    <a href="#">Contact Us</a>
+                    <a href="#">Share Your Story</a>
+                    <a href="#">Collaborate With Us</a>
+                </div>
+            </div>
+        </div>
+    
+        <div class="footer-bottom">
+            <p>© 2025 SHNAPS. Handmade in Singapore.</p>
+        </div>
+    </footer>
+
+    <!-- Warning Modal -->
+    <div id="googleFormModal" class="modal">
+    <div class="modal-content">
+        <p>You’re about to be redirected to a Google Form where you’ll upload your photos and fill in your details.</p>
+        <p>Please ensure everything is correct before submitting!</p>
+        <div class="modal-buttons">
+        <button onclick="redirectToForm()">Proceed</button>
+        <button onclick="closeModal()">Cancel</button>
+        </div>
+    </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

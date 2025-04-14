@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SHNAPS</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="announcement-bar">
+        FREE shipping on orders of 9 pieces or more!
+    </div>
+
+    <header class="container navbar">
+        <div class="navbar-inner">
+            <nav class="nav-left">
+                <a href="shop.html">SHOP</a>
+                <a href="#">ABOUT US</a>
+                <a href="walloflove.html">WALL OF LOVE</a>
+            </nav>
+
+            <div class="logo">
+                <a href="index.html">
+                    <img src="assets/logos/SHNAPS BLUE LOGO.png" alt="SHNAPS Logo">
+                </a>
+            </div>
+
+            <nav class="nav-right">
+                <a href="#">FAQs</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="container hero-content">
+                <div class="hero-text">
+                    <h1>Your favourite moments deserve<br><span>more than just screen time</span></h1>
+                    <p>
+                        Bring your memories to life with SHNAPS. Whether it’s a silly selfie, a milestone moment, or a shot you
+                        just love.
+                        Perfect for gifts, keepsakes, or just because.
+                    </p>
+                    <div class="hero-buttons">
+                        <a href="shop.html" class="btn btn-primary">SHOP 9 PIECE</a>
+                        <a href="shop.html" class="btn btn-outline">SHOP THE ARCHIVE</a>
+                    </div>
+                </div>
+        
+                <div class="hero-image">
+                    <img src="assets/heroSection/IMG_9660.jpg" alt="SHNAPS Magnet Mockup" />
+                </div>
+            </div>
+        </section>
+
+        <section class="moments">
+            <div class="container">
+                <h2>MAKE YOUR MOMENTS STICK</h2>
+                <p>
+                    One set of SHNAPS magnets is all it takes to turn your favorite moments into everyday joy.
+                    From silly selfies to milestone memories, each photo becomes a mini masterpiece you’ll actually want to show
+                    off.
+                    Stick them up, smile often, and let your walls, lockers, desks — or yes, even your fridge — tell your story,
+                    one magnet at a time.
+                </p>
+        
+                <div class="moments-gallery">
+                    <div class="moment">
+                    <img src="assets/aboutSection/1.png" alt="">
+                    </div>
+                    <div class="moment">
+                    <img src="assets/aboutSection/2.png" alt="">
+                    </div>
+                    <div class="moment">
+                    <img src="assets/aboutSection/3.png" alt="">
+                    </div>
+                    <div class="moment">
+                    <img src="assets/aboutSection/4.png" alt="">
+                    </div>
+                    <div class="moment">
+                    <img src="assets/aboutSection/5.png" alt="">
+                    </div>
+                    <div class="moment">
+                    <img src="assets/aboutSection/6.png" alt="">
+                    </div>
+                    <div class="moment">
+                    <img src="assets/aboutSection/7.png" alt="">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="camera-roll">
+            <h2>FROM CAMERA ROLL TO REAL LIFE</h2>
+            <div class="carousel-container">
+                <button class="carousel-btn left" onclick="prevSlide()">&#8592;</button>
+
+                <div class="carousel-track" id="carousel-track">
+                    <div class="carousel-image blurred">
+                        <img src="assets/carouselSection/photo-album.jpg" alt="Camera Roll" />
+                    </div>
+                    <div class="carousel-image main">
+                        <img src="assets/carouselSection/photo-Printed1.jpg" alt="Printed Photo" />
+                    </div>
+                    <div class="carousel-image blurred">
+                        <img src="assets/carouselSection/photo-Printed2.jpg" alt="Printed Photo 2" />
+                    </div>
+                </div>
+
+                <button class="carousel-btn right" onclick="nextSlide()">&#8594;</button>
+            </div>
+
+            <!-- 🔵 Carousel indicators -->
+            <div class="carousel-indicators">
+                <span class="dot active"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+            </div>
+        </section>
+
+        <!-- PRICING SECTION -->
+        <section class="pricing">
+            <h2>OUR PRICING</h2>
+            <p class="pricing-subtext">Choose the set that fits your story best</p>
+
+            <div class="pricing-cards">
+                <!-- Card 1 -->
+                <div class="pricing-card">
+                    <h3>The Collection</h3>
+                    <p class="price">$40</p>
+                    <p>9 curated memories in one elegant set. Ideal for gifts, fridge galleries, or preserving your favourite
+                        snapshots.</p>
+                    <ul>
+                        <li>✅ Free shipping included</li>
+                        <li>✅ Perfect for all occasions</li>
+                        <li>✅ Balanced layout for photo walls</li>
+                        <li>✅ $4.44 per piece</li>
+                    </ul>
+                    <button onclick="window.location.href='shop.html'">FIND OUT MORE</button>
+                </div>
+
+                <!-- Card 2 (highlighted) -->
+                <div class="pricing-card featured">
+                    <div class="badge">Special Offer</div>
+                    <h3>The Gallery</h3>
+                    <p class="price">$65</p>
+                    <p>Made for milestone moments and big love. A complete set of 18 magnets with a premium gift box.</p>
+                    <ul>
+                        <li>✅ Free shipping included</li>
+                        <li>✅ Great as a little surprise gift</li>
+                        <li>✅ High-quality matte finish</li>
+                        <li>✅ Ideal for first-time orders</li>
+                        <li>✅ Only $3.60 per piece</li>
+                    </ul>
+                    <button onclick="window.location.href='shop.html'">FIND OUT MORE</button>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="pricing-card">
+                    <h3>The Archive</h3>
+                    <p class="price">$489</p>
+                    <p>A complete set of 108 magnets, made to fill your yearboard — one memory at a time.</p>
+                    <ul>
+                        <li>✅ Free shipping included</li>
+                        <li>✅ One box. Twelve months.</li>
+                        <li>✅ For those who want it all</li>
+                        <li>✅ Premium engraved board</li>
+                        <li>✅ Only $3.24 per piece</li>
+                    </ul>
+                    <button onclick="window.location.href='shop.html'">FIND OUT MORE</button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="footer-container">
+            <!-- Left column -->
+            <div class="footer-left">
+                <a href="#">
+                    <img src="assets/logos/SHNAPS PINK LOGO.png" alt="SHNAPS Logo" class="footer-logo" />
+                </a>
+                <div class="footer-socials">
+                    <a href="https://www.instagram.com/shnaps.co/" target="_blank"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.tiktok.com/@shnaps.co"><i class="fab fa-tiktok"></i></a>
+                    <a href="shop.html"><i class="fas fa-shopping-cart"></i></a>
+                </div>
+                <p class="footer-tagline">90% of your best memories are still stuck in your camera roll.</p>
+            </div>
+
+            <!-- Middle column -->
+            <div class="footer-links">
+                <div>
+                    <h4>SHOP</h4>
+                    <a href="shop.html">The Collection</a>
+                    <a href="shop.html">The Gallery</a>
+                    <a href="shop.html">The Keepsake</a>
+                </div>
+                <div>
+                    <h4>INFO</h4>
+                    <a href="shop.html#how-it-works">How it works</a>
+                    <a href="#">About Us</a>
+                    <a href="#">FAQs</a>
+                </div>
+                <div>
+                    <h4>CONNECT</h4>
+                    <a href="#">Contact Us</a>
+                    <a href="walloflove.html">Share Your Story</a>
+                    <a href="#">Collaborate With Us</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>© 2025 SHNAPS. Handmade in Singapore.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
