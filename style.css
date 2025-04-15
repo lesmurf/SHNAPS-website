@@ -698,7 +698,8 @@ transition: transform 0.3s ease;
 
 .how-it-works {
     background-color: var(--bg-color-2);
-    padding: 4rem 2rem;
+    padding: 2rem 2rem;
+    margin: 0;
     text-align: center;
 }
 
@@ -1258,6 +1259,30 @@ transition: transform 0.3s ease;
 
 .shop-btn:hover {
     background-color: #3a5069;
+}
+
+.button-row {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    margin-top: 1rem;
+}
+
+.shop-btn.secondary {
+    background-color: transparent;
+    border: 2px solid var(--btn-primary-blue);
+    color: var(--btn-primary-blue);
+    padding: 0.75rem 1.5rem;
+    font-weight: bold;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none;
+}
+
+.shop-btn.secondary:hover {
+    background-color: #3a5069;
+    color: #ffffff;
 }
 
 .faq-contact {
