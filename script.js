@@ -5,6 +5,48 @@ let currentIndex = 1; // center image
 const track = document.getElementById('carousel-track');
 const slides = track ? track.children : [];
 
+
+
+
+document.addEventListener("DOMContentLoaded", () => {
+  // Toggle individual FAQ items
+  document.querySelectorAll('.faq-question').forEach(question => {
+    question.addEventListener('click', () => {
+      const item = question.parentElement;
+
+      // If it's already open, close it
+      if (item.classList.contains('open')) {
+        item.classList.remove('open');
+      } else {
+        // Close all others
+        document.querySelectorAll('.faq-item').forEach(el => el.classList.remove('open'));
+        // Then open the clicked one
+        item.classList.add('open');
+      }
+    });
+  });
+
+  // Tab switching logic
+  document.querySelectorAll('.faq-tabs .tab').forEach(button => {
+    button.addEventListener('click', () => {
+      // Switch tab active state
+      document.querySelectorAll('.faq-tabs .tab').forEach(tab => tab.classList.remove('active'));
+      button.classList.add('active');
+
+      // Show the right content
+      document.querySelectorAll('.faq-content').forEach(content => content.style.display = 'none');
+      document.getElementById(button.dataset.tab).style.display = 'block';
+
+      // Optionally collapse any open answers when switching tabs
+      document.querySelectorAll('.faq-item').forEach(el => el.classList.remove('open'));
+    });
+  });
+});
+
+
+
+
+
 function updateCarousel() {
   const images = document.querySelectorAll('.carousel-image');
   images.forEach((img, index) => {
@@ -61,7 +103,7 @@ function redirectToForm() {
 const images = [
     {
     src: "assets/aboutSection/1.png",
-    quote: "“Cutest thing I’ve ordered this year! Made my fridge so happy.”",
+    quote: "“Cutest thing I've ordered this year! Made my fridge so happy.”",
     },
     {
     src: "assets/aboutSection/2.png",
@@ -84,7 +126,7 @@ const images = [
     quote: "“Beautiful packaging and even better magnets inside.”",
     },
     {
-    src: "assets/wallOfLove/1.jpg",
+    src: "assets/aboutSection/7.png",
     quote: "“Beautiful packaging and even better magnets inside.”",
     },
 ];
@@ -100,3 +142,6 @@ images.forEach((item) => {
     `;
     gallery.appendChild(div);
 });
+
+
+
