@@ -7,6 +7,30 @@ const slides = track ? track.children : [];
 
 
 
+function toggleMenu() {
+  const navLeft = document.querySelector('.nav-left');
+  const navRight = document.querySelector('.nav-right');
+  const menuToggle = document.getElementById('menuToggle');
+
+  navLeft.classList.toggle('active');
+  navRight.classList.toggle('active');
+
+  // Toggle icon
+  const isActive = navLeft.classList.contains('active');
+  menuToggle.textContent = isActive ? '✕' : '☰';
+}
+
+document.querySelectorAll('.nav-left a, .nav-right a').forEach(link => {
+  link.addEventListener('click', () => {
+    document.querySelectorAll('.nav-left, .nav-right').forEach(nav => {
+      nav.classList.remove('active');
+    });
+  });
+});
+
+
+
+
 
 document.addEventListener("DOMContentLoaded", () => {
   // Toggle individual FAQ items

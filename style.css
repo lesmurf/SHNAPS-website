@@ -1,57 +1,76 @@
 :root {
-    /* Layout */
+    /*================== Layout ==================*/
     --max-width: 1200px;
     --section-padding: 4rem;
+    --container-padding: 2.5rem;
 
-    /*======================== Colors ========================*/
-    /* Background Color */
-    --bg-color-1: #E9CDB8;
-    --bg-color-2: #EAD6C8;
-    --primary-color: #56667A;
-    --accent-color-notice: #F4B942;
-    --accent-color-logos: #699BBE;
-    /* Text Color */
-    --text-dark: #56667A;
-    --text-light: #E9CDB8;
+    /*================== Colors ==================*/
+    /* Background */
+    --bg-color-1: #e9cdb8;
+    --bg-color-2: #ead6c8;
+
+    /* Text */
     --text-black: #000000;
-    /* Buttons Color */
-    --btn-primary-blue: #56667A;
-    --btn-primary-beige: #E9CDB8;
+    --text-dark: #56667a;
+    --text-light: #e9cdb8;
 
-    /* Typography */
+    /* Buttons */
+    --btn-primary-blue: #56667a;
+    --btn-primary-beige: #e9cdb8;
+
+    /* Accent */
+    --primary-color: #56667a;
+    --accent-color-notice: #f4b942;
+    --accent-color-logos: #699bbe;
+
+    /*================== Typography ==================*/
     --heading-font: 'Poppins', sans-serif;
     --body-font: 'Inter', sans-serif;
 
-    /* Effects */
+    /*================== Effects ==================*/
     --shadow-soft: 0 8px 16px rgba(0, 0, 0, 0.1);
     --radius: 12px;
-    --border: 1px solid #ffffff;
+    --border: 1px solid black;
 }
 
-/*================== GLOBAL RESETS ==================*/
+/*================== GLOBAL RESET ==================*/
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     font-family: var(--body-font);
     background-color: var(--bg-color-1);
-    color: var(--text-black);
+    color: var(--text-dark);
     line-height: 1.6;
+    font-size: 16px;
 }
 
 .container {
-    max-width: var(--max-width);
+    max-width: 1200px;
     margin: 0 auto;
-    padding: 0 2.5rem;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
 }
 
-img {
+/*================== MEDIA ==================*/
+img,
+picture,
+video,
+canvas,
+svg {
     display: block;
+    max-width: 100%;
+    height: auto;
 }
 
+/*================== TYPOGRAPHY ==================*/
 a {
     color: inherit;
     text-decoration: none;
@@ -62,37 +81,58 @@ button {
     border: none;
     border-radius: var(--radius);
     cursor: pointer;
+    background: none;
+    padding: 0;
 }
-/*================== ANNOUNCEMENT BAR ==================*/
+/*================================================ FOOTER & HEADER  ================================================*/
+/* ================================ HEADER ================================ */
+/* ANNOUNCEMENT BAR */
 .announcement-bar {
-    background-color: var(--primary-color);
-    /* or a highlight color */
+    background-color: var(--bg-color-1);
     color: var(--text-light);
+    font-family: var(--heading-font);
     text-align: center;
     font-size: 0.875rem;
     font-weight: 600;
     padding: 0.5rem 1rem;
-    font-family: var(--heading-font);
     letter-spacing: 0.5px;
 }
 
-/*================== NAVBAR ==================*/
+/* HEADER WRAPPER */
+.site-header {
+    background-color: var(--bg-color-1);
+    position: sticky;
+    top: 0;
+    z-index: 999;
+}
+
+/* NAVBAR */
 .navbar {
     background-color: var(--bg-color-1);
-    position: relative;
-    z-index: 1000;
-    color: var(--btn-primary-blue);
+    padding: 2rem 0;
+    width: 100%;
+    position: sticky;
+    top: 0;
     font-weight: bold;
-    padding: 0.5rem 0;
+    font-size: 18px;
+    z-index: 1000;
 }
 
 .navbar-inner {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 0 2rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0rem 2rem;
-    height: 80px;
     position: relative;
+}
+
+.nav-left,
+.nav-right {
+    display: flex;
+    gap: 2rem;
+    align-items: center;
 }
 
 .nav-left a,
@@ -115,64 +155,159 @@ button {
     transition: width 0.3s ease-in-out;
 }
 
-.nav-left a:hover::after,
-.nav-right a:hover::after {
-    width: 100%;
-}
-
 .nav-left a:hover,
 .nav-right a:hover {
     color: #1d3a4c;
 }
 
-.nav-left,
-.nav-right {
-    display: flex;
-    gap: 2rem;
-    align-items: center;
+.nav-left a:hover::after,
+.nav-right a:hover::after {
+    width: 100%;
 }
 
 .logo {
     position: absolute;
     left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
+    transform: translateX(-50%);
     z-index: 10;
-    padding: 0 0.5rem;
 }
 
 .logo img {
-    max-height: 140px;
+    max-height: 160px;
     width: auto;
-    display: block;
 }
 
-.shop-title {
-    text-align: center;
-    margin: 2rem auto;
-}
-
-.shop-title h1 {
-    font-size: 2.5rem;
-    font-weight: 700;
+/* HAMBURGER MENU */
+.menu-toggle {
+    display: none;
+    /* only show on mobile via media query */
+    position: absolute;
+    top: 1rem;
+    right: 1.5rem;
+    font-size: 2rem;
+    background: none;
+    border: none;
     color: var(--text-dark);
-    letter-spacing: 1px;
+    /* or a fallback like #3d3d3d */
+    cursor: pointer;
+    z-index: 1001;
 }
 
-/*================== HERO ==================*/
+/* ================================ FOOTER ================================ */
+.site-footer {
+    background-color: #56667a;
+    color: #f5e7dc;
+    padding: 3rem 2rem 1rem;
+    font-family: var(--body-font);
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.footer-left {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    max-width: 25rem;
+}
+
+.footer-logo {
+    width: 180px;
+    height: auto;
+    display: block;
+    margin-top: 0;
+    padding-bottom: 0;
+}
+
+.footer-socials {
+    display: flex;
+    gap: 1rem;
+    font-size: 1.3rem;
+    padding: 0 20px;
+}
+
+.footer-socials i {
+    font-size: 1.5rem;
+    color: var(--bg-color-1);
+    margin-right: 1rem;
+    transition: opacity 0.3s;
+}
+
+.footer-socials i:hover {
+    opacity: 0.7;
+}
+
+.footer-tagline {
+    margin-top: 1.5rem;
+    font-size: 2.2rem;
+    color: var(--text-light);
+    line-height: 1.4;
+}
+
+.footer-links {
+    max-width: 35rem;
+    display: flex;
+    gap: 4rem;
+    flex: 1;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    text-align: left;
+}
+
+.footer-links div {
+    min-width: 120px;
+}
+
+.footer-links h4 {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+    color: var(--bg-color-1);
+}
+
+.footer-links a {
+    display: block;
+    font-size: 0.9rem;
+    color: #f5e7dc;
+    text-decoration: none;
+    margin-bottom: 0.4rem;
+    transition: color 0.3s;
+}
+
+.footer-links a:hover {
+    color: #ffffff;
+}
+
+.footer-bottom {
+    text-align: right;
+    margin-top: 2rem;
+    font-size: 0.8rem;
+    color: #f5e7dc;
+}
+
+/*================================================ INDEX.HTML  ================================================*/
+/* === HERO SECTION === */
 .hero {
     background-color: var(--bg-color-1);
-    padding: 3rem 0 3rem 0;
+    padding: 3rem 0;
 }
 
 .hero-content {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 0 2rem;
     display: flex;
-    flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
-    gap: 3rem;
+    gap: 8rem;
 }
 
+/* HERO SECTION LEFT SIDE */
 .hero-text {
     flex: 1 1 480px;
     max-width: 600px;
@@ -187,7 +322,7 @@ button {
 }
 
 .hero-text h1 span {
-    color: var(--primary-color);
+    color: #8797AF;
 }
 
 .hero-text p {
@@ -203,7 +338,7 @@ button {
     margin-top: 2rem;
 }
 
-/* Button styles */
+/* Button styles for Hero Section */
 .btn {
     padding: 0.75rem 1.5rem;
     font-weight: bold;
@@ -229,9 +364,10 @@ button {
 
 .btn-outline:hover {
     background-color: var(--btn-primary-blue);
-    color: white !important;
+    color: white;
 }
 
+/* HERO SECTION RIGHT SIDE */
 .hero-image {
     flex: 1 1 400px;
     max-width: 480px;
@@ -244,7 +380,7 @@ button {
     box-shadow: var(--shadow-soft);
 }
 
-/*================== ABOUT SECTION ==================*/
+/* === ABOUT SECTION === */
 .moments {
     background-color: var(--bg-color-2);
     padding: 4rem 0;
@@ -297,14 +433,14 @@ button {
     object-fit: cover;
     object-position: center;
     transform: scale(1.2);
-transition: transform 0.3s ease;
+    transition: transform 0.3s ease;
 }
 
 .moment img:hover {
     transform: scale(1.35);
 }
 
-/*================== CAROUSEL SECTION ==================*/
+/*=== CAROUSEL SECTION === */
 .camera-roll {
     background-color: var(--bg-color-1);
     padding: 3.5rem 0;
@@ -419,7 +555,7 @@ transition: transform 0.3s ease;
     background-color: var(--primary-color);
 }
 
-/*================== PRICING SECTION ==================*/
+/* === PRICING SECTION === */
 .pricing {
   background-color: var(--bg-color-2);
   padding: 4rem 2rem;
@@ -528,104 +664,19 @@ transition: transform 0.3s ease;
   font-weight: bold;
 }
 
-/*================== FOOTER SECTION ==================*/
-.site-footer {
-    background-color: #56667a;
-    color: #f5e7dc;
-    padding: 3rem 2rem 1rem;
-    font-family: var(--body-font);
+/*================================================ SHOP.HTML  ================================================*/
+.shop-title {
+    text-align: center;
+    margin: 2rem auto;
 }
 
-.footer-container {
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    gap: 2rem;
-    max-width: 1200px;
-    margin: 0 auto;
+.shop-title h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--text-dark);
+    letter-spacing: 1px;
 }
 
-.footer-left {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    max-width: 25rem;
-}
-
-.footer-logo {
-    width: 180px;
-    height: auto;
-    display: block;
-    margin-top: 0;
-    padding-bottom: 0;
-}
-
-.footer-socials {
-    display: flex;
-    gap: 1rem;
-    font-size: 1.3rem;
-    padding: 0 20px;
-}
-
-.footer-socials i {
-    font-size: 1.5rem;
-    color: var(--bg-color-1);
-    margin-right: 1rem;
-    transition: opacity 0.3s;
-}
-
-.footer-socials i:hover {
-    opacity: 0.7;
-}
-
-.footer-tagline {
-    margin-top: 1.5rem;
-    font-size: 2.2rem;
-    color: var(--text-light);
-    line-height: 1.4;
-}
-
-.footer-links {
-    max-width: 35rem;
-    display: flex;
-    gap: 4rem;
-    flex: 1;
-    flex-wrap: wrap;
-    justify-content: flex-end;
-    text-align: left;
-}
-
-.footer-links div {
-    min-width: 120px;
-}
-
-.footer-links h4 {
-    font-size: 1.2rem;
-    margin-bottom: 0.5rem;
-    color: var(--bg-color-1);
-}
-
-.footer-links a {
-    display: block;
-    font-size: 0.9rem;
-    color: #f5e7dc;
-    text-decoration: none;
-    margin-bottom: 0.4rem;
-    transition: color 0.3s;
-}
-
-.footer-links a:hover {
-    color: #ffffff;
-}
-
-.footer-bottom {
-    text-align: right;
-    margin-top: 2rem;
-    font-size: 0.8rem;
-    color: #f5e7dc;
-}
-
-/*================================= SHOP PAGE =================================*/
 .shop-hero {
     background-color: var(--bg-color-2);
     display: flex;
@@ -695,7 +746,6 @@ transition: transform 0.3s ease;
 }
 
 /* HOW IT WORKS */
-
 .how-it-works {
     background-color: var(--bg-color-2);
     padding: 2rem 2rem;
@@ -744,7 +794,7 @@ transition: transform 0.3s ease;
     color: var(--text-dark);
 }
 
-/* WARNING MODAL */
+/* WARNING MODAL TO GO GOOGLE FORMS ORDER */
 .modal {
     position: fixed;
     top: 0;
@@ -783,7 +833,7 @@ transition: transform 0.3s ease;
     font-weight: bold;
 }
 
-/*================================= WALL OF PAGE =================================*/
+/*================================================ WALLOFLOVE.HTML  ================================================*/
 /* WALL OF LOVE SECTION */
 .wall-of-love {
     padding: 4rem 2rem;
@@ -866,8 +916,8 @@ transition: transform 0.3s ease;
     background-color: #3a4a5e;
 }
 
-/*================================= theArchive page =================================*/
-/*================== ARCHIVE PAGE THEME OVERRIDES ==================*/
+/*================================================ THEARCHIVE.HTML  ================================================*/
+/*================== THEME OVERRIDES ==================*/
 .archive-page {
     --bg-color-1: #37302c;
     --bg-color-2: #453d37;
@@ -880,7 +930,7 @@ transition: transform 0.3s ease;
 
 .archive-hero {
     background-color: var(--bg-color-1);
-    padding: 5rem 2rem 3rem;
+    padding: 2rem 2rem 3rem;
     text-align: center;
 }
 
@@ -907,24 +957,27 @@ transition: transform 0.3s ease;
     line-height: 1.6;
 }
 
-/* TIP */
-.timeline-tip {
-    text-align: center;
-    font-size: 0.9rem;
-    color: var(--text-light);
-    opacity: 0.8;
-}
-
 /* ===========Timeline============== */
 .timeline-section {
     background-color: var(--bg-color-2);
     padding: 4rem 2rem;
+    overflow-x: auto;
 }
 
 .timeline-container {
     position: relative;
     max-width: 1280px;
     margin: 0 auto;
+    overflow-x: auto;
+    overflow-y: visible;
+    padding-bottom: 2rem;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    z-index: 1;
+}
+
+.timeline-container::-webkit-scrollbar {
+    display: none;
 }
 
 .timeline-line {
@@ -940,10 +993,24 @@ transition: transform 0.3s ease;
 
 .timeline {
     display: flex;
+    gap: 1rem;
     justify-content: space-between;
     align-items: flex-start;
     position: relative;
     z-index: 2;
+    min-width: 800px
+}
+
+.timeline::before {
+    content: "";
+    position: absolute;
+    top: 1.6rem;
+    left: 0;
+    height: 2px;
+    width: 100%;
+    background-color: var(--primary-color);
+    opacity: 0.4;
+    z-index: 1;
 }
 
 .timeline-step {
@@ -978,61 +1045,33 @@ transition: transform 0.3s ease;
     max-width: 8rem;
 }
 
-.emoji-tooltip {
-    position: relative;
-    display: inline-block;
-}
-
-.emoji-tooltip .emoji {
+.emoji {
     cursor: pointer;
-}
-
-.emoji-tooltip .tooltip {
-    visibility: hidden;
-    opacity: 0;
-    background-color: #333;
-    color: #fff;
-    text-align: center;
-    padding: 6px 10px;
-    border-radius: 6px;
-    position: absolute;
-    bottom: 130%;
-    left: 50%;
-    transform: translateX(-50%);
-    white-space: nowrap;
-    z-index: 10;
-    font-size: 1.2rem;
-    transition: opacity 0.3s ease;
-}
-
-.emoji-tooltip:hover .tooltip {
-    visibility: visible;
-    opacity: 1;
 }
 
 /* SHOWCASE */
 .showcase-section {
     background-color: var(--bg-color-1);
-    padding: 4rem 2rem;
+    padding: 0rem 2rem;
     text-align: center;
 }
 
 .showcase-images {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
     gap: 2rem;
     max-width: 1280px;
     margin: 0 auto;
+    padding: 2rem 0;
 }
 
 .showcase-images img {
-    border-radius: 12px;
     width: 100%;
-    max-width: 400px;
+    height: auto;
     aspect-ratio: 1/1;
+    object-fit: cover;
+    border-radius: 12px;
 }
-
 
 .material-section {
     background-color: var(--bg-color-2);
@@ -1099,27 +1138,22 @@ transition: transform 0.3s ease;
 
 .archive-page .site-footer {
     background-color: var(--bg-color-1);
-    color: var(--text-light);
+    color: var(--text-light) !important;
 }
 
-.archive-page .site-footer a {
+.archive-page .site-footer a,
+.archive-page .site-footer h4,
+.archive-page .site-footer p {
     color: var(--text-light);
+    /* Make links, headings, and text brown */
 }
 
 .archive-page .site-footer a:hover {
-    color: var(--primary-color);
+    color: var(--accent-color-notice);
+    /* Optional: hover color */
 }
 
-.archive-page .footer-bottom {
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
-    color: var(--text-light);
-}
-
-.archive-page .site-footer h4 {
-    color: var(--text-light);
-}
-
-/* =========== FAQ ============== */
+/*================================================ FAQHTML  ================================================*/
 .faq-heading {
     font-size: 3rem;
     font-weight: bold;
@@ -1303,4 +1337,135 @@ transition: transform 0.3s ease;
 
 .contact-btn:hover {
     background-color: #bbb;
+}
+
+@media (max-width: 768px) {
+
+    /* ========== HERO SECTION ========== */
+    .hero {
+        min-height: auto;
+        padding: 2rem 0;
+    }
+
+    .hero-content {
+        flex-direction: column;
+        align-items: center;
+        gap: 1.5rem;
+        padding: 0 1.5rem;
+    }
+
+    .hero-buttons {
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    .hero-image {
+        margin-top: 1.5rem;
+    }
+
+    /* ========== NAVBAR ========== */
+    .navbar-inner {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 1rem 1.5rem;
+        position: relative;
+    }
+
+    .logo {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 60px;
+        margin: 0 auto;
+    }
+
+    .logo img {
+        height: 100%;
+        max-height: 120px;
+        width: auto;
+        display: block;
+    }
+
+    /* ========== NAV LINKS (DROPDOWN) ========== */
+    .nav-left,
+    .nav-right {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        background-color: var(--btn-primary-blue);
+        padding: 1rem 0;
+        text-align: center;
+        z-index: 999;
+        position: relative;
+    }
+
+    .nav-left.active,
+    .nav-right.active {
+        display: flex;
+    }
+
+    .nav-left a,
+    .nav-right a {
+        display: block;
+        padding: 0rem 1rem;
+        color: var(--bg-color-1);
+        font-weight: bold;
+    }
+
+    /* ========== BURGER MENU ICON ========== */
+    .menu-toggle {
+        display: block;
+        position: absolute;
+        top: 1.25rem;
+        right: 1.5rem;
+        font-size: 1.5rem;
+        background: none;
+        border: none;
+        color: var(--text-dark);
+        cursor: pointer;
+        z-index: 1000;
+    }
+
+    .menu-toggle {
+        display: block;
+        color: #a38f80 !important;
+    }
+
+    .container {
+        padding-left: 1.5rem;
+        padding-right: 1.5rem;
+    }
+
+    .archive-page .nav-left,
+    .archive-page .nav-right {
+        background-color: var(--primary-color);
+    }
+
+    .archive-page .nav-left a,
+    .archive-page .nav-right a {
+        color: var(--bg-color-1) !important;
+    }
+
+    .archive-hero {
+        background-color: var(--bg-color-1);
+        padding: 1rem 2rem 3rem;
+        text-align: center;
+    }
+
+    .archive-page .menu-toggle {
+        color: var(--bg-color-1);
+    }
+}
+
+@media (min-width: 1024px) {
+    .timeline {
+        justify-content: space-between;
+        min-width: 100%;
+        gap: 0;
+    }
+
+    .timeline-step {
+        flex: 1;
+    }
 }

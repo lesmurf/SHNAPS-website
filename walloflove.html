@@ -7,42 +7,58 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="announcement-bar">
-        FREE shipping on orders of 9 pieces or more!
+    <!-- ================== SITE HEADER ================== -->
+    <div class="site-header">
+    
+        <!-- 🔔 Announcement Bar -->
+        <div class="announcement-bar">
+            FREE shipping on orders of 9 pieces or more!
+        </div>
+    
+        <!-- 🧭 Navigation Bar -->
+        <header class="container navbar">
+            <div class="navbar-inner">
+    
+                <!-- Left Nav Links -->
+                <nav class="nav-left">
+                    <a href="shop.html">SHOP</a>
+                    <a href="#">ABOUT US</a>
+                    <a href="walloflove.html">WALL OF LOVE</a>
+                </nav>
+    
+                <!-- Center Logo -->
+                <div class="logo">
+                    <a href="index.html">
+                        <img src="assets/logos/SHNAPS BLUE LOGO.png" alt="SHNAPS Logo">
+                    </a>
+                </div>
+    
+                <!-- Burger Icon -->
+                <button class="menu-toggle" id="menuToggle" onclick="toggleMenu()">☰</button>
+    
+                <!-- Right Nav Links -->
+                <nav class="nav-right">
+                    <a href="theArchive.html">theArchive</a>
+                    <a href="faq.html">FAQs</a>
+                </nav>
+            </div>
+        </header>
     </div>
-    
-    <header class="container navbar">
-        <div class="navbar-inner">
-            <nav class="nav-left">
-                <a href="shop.html">SHOP</a>
-                <a href="#">ABOUT US</a>
-                <a href="walloflove.html">WALL OF LOVE</a>
-            </nav>
-    
-            <div class="logo">
-                <a href="index.html">
-                    <img src="assets/logos/SHNAPS BLUE LOGO.png" alt="SHNAPS Logo">
+
+    <section class="container showcase-section">
+        <section class="wall-of-love">
+            <h2>Wall of Love</h2>
+            <p class="wall-subtext">See how others are displaying their SHNAPS moments!</p>
+
+            <div class="wall-gallery" id="wall-gallery"></div>
+
+            <div class="submit-section">
+                <p>Want to be featured? Share your photo with us!</p>
+                <a href="https://forms.gle/your-google-form-link" target="_blank">
+                    <button class="submit-btn">Submit Your Photo</button>
                 </a>
             </div>
-    
-            <nav class="nav-right">
-                <a href="#">FAQs</a>
-            </nav>
-        </div>
-    </header>
-
-    <section class="wall-of-love">
-        <h2>Wall of Love</h2>
-        <p class="wall-subtext">See how others are displaying their SHNAPS moments!</p>
-
-        <div class="wall-gallery" id="wall-gallery"></div>
-
-        <div class="submit-section">
-            <p>Want to be featured? Share your photo with us!</p>
-            <a href="https://forms.gle/your-google-form-link" target="_blank">
-                <button class="submit-btn">Submit Your Photo</button>
-            </a>
-        </div>
+        </section>
     </section>
 
     <footer class="site-footer">
